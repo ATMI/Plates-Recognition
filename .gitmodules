@@ -1,0 +1,3 @@
+[submodule "model/D-FINE"]
+	path = model/D-FINE
+	url = https://github.com/Peterande/D-FINE.git
