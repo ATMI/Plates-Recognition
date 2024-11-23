@@ -25,9 +25,9 @@ class YoloItem:
 
 	def is_valid(self) -> bool:
 		return (
-			self.image_name is not None and
-			self.image_size is not None and
-			self.bboxes is not None
+				self.image_name is not None and
+				self.image_size is not None and
+				self.bboxes is not None
 		)
 
 
@@ -109,7 +109,8 @@ def main(src: Path, dst: Path, indent: bool):
 					bbox=bbox,
 					w=item.image_size[0],
 					h=item.image_size[1],
-				)
+				),
+				area=bbox.area(),
 			)
 			for j, bbox in enumerate(item.bboxes)
 		]

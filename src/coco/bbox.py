@@ -18,3 +18,6 @@ class CocoBBox:
 			w=w * bbox.w,
 			h=h * bbox.h,
 		)
+
+	def area(self) -> float:
+		return self.w * self.h

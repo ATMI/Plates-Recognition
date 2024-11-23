@@ -9,3 +9,4 @@ class CocoAnnotation:
 	image_id: int
 	category_id: int
 	bbox: CocoBBox
+	area: float

@@ -19,3 +19,6 @@ class YoloBBox:
 			w=float(w),
 			h=float(h),
 		)
+
+	def area(self) -> float:
+		return self.w * self.h
