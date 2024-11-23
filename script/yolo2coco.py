@@ -86,6 +86,9 @@ def main(src: Path, dst: Path, indent: bool):
 	coco_categories = set()
 
 	for i, item in enumerate(yolo_dataset):
+		if len(item.bboxes) == 0:
+			raise RuntimeError(f"No bboxes found for: {item.image_name}")
+
 		if len(item.bboxes) > BBOX_LIMIT:
 			raise RuntimeError(f"Too many bboxes ({len(item.bboxes)}): {item.image_name}")
 
@@ -136,7 +139,7 @@ def main(src: Path, dst: Path, indent: bool):
 	)
 
 	dataset_path = dst / "dataset.json"
-	coco_dataset.save_description(dataset_path, 2 if indent else None)
+	coco_dataset.save(dataset_path, 2 if indent else None)
 
 
 if __name__ == "__main__":
