@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from src.coco.bbox import CocoBBox
+from src.box import Box
 
 
 @dataclass
@@ -8,5 +8,5 @@ class CocoAnnotation:
 	id: int
 	image_id: int
 	category_id: int
-	bbox: CocoBBox
+	bbox: Box
 	area: float

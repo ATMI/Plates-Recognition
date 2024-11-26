@@ -1,11 +1,12 @@
 import argparse
 from pathlib import Path
 
+from src.box import LTWHAbsBox
 from src.coco.dataset import CocoDataset
 
 
 def main(path: Path, ratio: float):
-	dataset = CocoDataset.load(path)
+	dataset = CocoDataset.load(path, LTWHAbsBox)
 
 	train_path = path.parent / "train.json"
 	eval_path = path.parent / "eval.json"

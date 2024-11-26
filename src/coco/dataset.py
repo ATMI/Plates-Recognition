@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Tuple
 
+from src.box import Box
 from src.coco.annotation import CocoAnnotation
-from src.coco.bbox import CocoBBox
 from src.coco.category import CocoCategory
 from src.coco.image import CocoImage
 
@@ -25,8 +25,8 @@ class CocoDataset:
 
 	@staticmethod
 	def json_serializer(obj):
-		if isinstance(obj, CocoBBox):
-			return [obj.ltx, obj.lty, obj.w, obj.h]
+		if isinstance(obj, Box):
+			return obj.coords()
 		return obj.__dict__
 
 	def save(self, file: Path, indent: int | None = None):
@@ -34,7 +34,7 @@ class CocoDataset:
 			json.dump(self, f, default=self.json_serializer, indent=indent)
 
 	@staticmethod
-	def load(file: Path) -> "CocoDataset":
+	def load(file: Path, box_cls) -> "CocoDataset":
 		with open(file, "r") as f:
 			data = json.load(f)
 
@@ -45,8 +45,8 @@ class CocoDataset:
 		]
 
 		for annotation in data["annotations"]:
-			ltx, lty, w, h = annotation["bbox"]
-			annotation["bbox"] = CocoBBox(ltx, lty, w, h)
+			box = annotation["bbox"]
+			annotation["bbox"] = box_cls.from_coords(box)
 		data["annotations"] = [
 			CocoAnnotation(**annotation)
 			for annotation in data["annotations"]
