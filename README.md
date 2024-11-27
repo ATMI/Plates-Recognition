@@ -7,12 +7,6 @@
 1) [Description](#Description)
 2) [Get started](#get-started)
 3) [Project Structure](#project-structure)
-   4) [Overview](#overview)
-   5) [Data](#data)
-   6) [Model](#model)
-   7) [Script](#script)
-   8) [Src](#src)
-
 ----
 
 
