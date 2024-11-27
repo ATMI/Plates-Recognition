@@ -45,8 +45,9 @@ To get started with ISS, follow these steps:
 
 2) Navigate to the submodule directory: ```cd Plates-Recognition/model/DFine```
 
-2) Install required packages: ```pip install -r requirements.txt```
+3) Install required packages: ```pip install -r requirements.txt```
 
+4) Download model checkpoints: [Google Drive Link](https://drive.google.com/drive/u/1/folders/1ewKrJnHvtHA-jff5eFnEEeASRpYXHZN2)
 
 ----
 
