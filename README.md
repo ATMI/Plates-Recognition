@@ -1,5 +1,21 @@
 # Simple implementation of Automated License Plate Recognition
 
+
+---
+
+## Table of Contents
+1) [Description](#Description)
+2) [Get started](#get-started)
+3) [Project Structure](#project-structure)
+   4) [Overview](#overview)
+   5) [Data](#data)
+   6) [Model](#model)
+   7) [Script](#script)
+   8) [Src](#src)
+
+----
+
+
 ## Description
 
 This project implements logic for ALPR training and primitive inference using a novel object detection
@@ -25,6 +41,20 @@ The algorithm operates in the following steps:
 
 <img src="data/demo/full/ru5385578%20%5Bа%20060%20ер%2050%5D%20Audi%20A1%20Sportback.png" alt="A" style="display:inline; width:45%; margin-right:5%;"/>
 <img src="data/demo/full/26491443.jpg" alt="B" style="display:inline; width:45%;"/>
+
+----
+
+## Get Started
+To get started with ISS, follow these steps:
+
+1) Clone the repository **including submodules**: ```git clone --recurse-submodules https://github.com/ATMI/Plates-Recognition.git``` 
+
+2) Navigate to the submodule directory: ```cd Plates-Recognition/model/DFine```
+
+2) Install required packages: ```pip install -r requirements.txt```
+
+
+----
 
 ## Project Structure
 
