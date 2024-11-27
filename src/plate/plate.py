@@ -82,6 +82,10 @@ def draw_symbols(image: Image | ImageDraw, symbols: List[Symbol]):
 	for symbol in symbols:
 		draw_rect(image, symbol.rect)
 
+		# size = int(0.5 * symbol.rect.height())
+		# pos = (symbol.rect.ltx, symbol.rect.rby)
+		# image.text(pos, str(symbol), font=ImageFont.load_default(size))
+
 
 def draw_plate(image: Image | ImageDraw, plate: Plate):
 	if isinstance(image, Image):

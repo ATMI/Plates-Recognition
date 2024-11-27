@@ -7,7 +7,7 @@ from src.plate.recognizer import PlateRecognizer
 from src.util.dfine import dfine_handle_path
 
 config = Path("model/DFINE/configs/dfine/custom/plate_recognition_n.yml")
-checkpoint = Path("model/DFINE/output/plate_recognition_n/last.pth")
+checkpoint = Path("model/DFINE/output/plate_recognition_n_7/best_stg1.pth")
 
 
 def prepare_recognizer(thresh: float) -> PlateRecognizer:

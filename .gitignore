@@ -7,3 +7,8 @@
 /data/yolo/ww/*
 /data/yolo/e644ka/*
 /data/yolo/platesmania/*
+
+/data/autocrop/*
+/data/autorecognize/*
+/data/coco/*
+/data/correctrecognize/*
